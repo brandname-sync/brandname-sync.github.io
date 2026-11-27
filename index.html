@@ -6,168 +6,181 @@
 <title>Project Status – Đồng bộ Voice Brandname LONGCHAU</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f3f6fa;--card:#fff;--ink:#0f1f3d;--muted:#6b7a90;--line:#e3e8ef;--green:#22a559;--blue:#2457e6;--grey:#9aa6b8;--orange:#e98a2b;--amber:#f2b01e}
+:root{--ink:#0b1f4d;--muted:#4b5876;--soft:#6b7896;--line:#e3e9f3;--blue:#1d5bf0;--blue-d:#1440b8;--blue-bg:#eaf1ff;--green:#16a34a;--green-d:#15803d;--green-bg:#eaf8ef;--orange:#ea6c0a;--orange-bg:#fff3e6;--purple:#7c3aed;--purple-bg:#f3edff;--grey:#c3cbdb;--grey-bg:#f1f4f9}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",Inter,system-ui,-apple-system,sans-serif;line-height:1.55}
-.wrap{max-width:1080px;margin:0 auto;padding:32px 24px 60px}
-.eyebrow{color:var(--blue);letter-spacing:.12em;font-size:13px;font-weight:600}
-h1{font-size:32px;margin:4px 0 10px;letter-spacing:-.01em}
-h2{font-size:17px;margin:0 0 12px;letter-spacing:.01em}
-.meta{display:flex;gap:10px;flex-wrap:wrap;font-size:14px}
-.meta span{background:#fff;border:1px solid var(--line);border-radius:10px;padding:5px 12px}
-.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--amber);margin-right:6px;vertical-align:0}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 26px;margin-top:18px}
-.summary p{margin:0 0 8px;font-size:15.5px}.summary p:last-child{margin:0}
-table{width:100%;border-collapse:collapse;font-size:14.5px}
-th,td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--muted);font-size:12.5px;font-weight:600;background:#f8fafc}
-tr:last-child td{border-bottom:0}
-td.who{font-weight:700;white-space:nowrap;width:70px}
-.ask{border-left:5px solid var(--orange)}
-.st{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:10px;margin-bottom:4px;white-space:nowrap}
-.s-done{background:#e5f6ec;color:#1b8a49}.s-wait{background:#fff3e6;color:#c46a12}.s-ns{background:#eef1f5;color:#56637a}.s-na{background:#f6f7f9;color:#9aa3b2}
-.muted{color:var(--muted);font-size:13px}
+body{margin:0;color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",Inter,system-ui,sans-serif;line-height:1.5;background:#f5f8fd;background-image:radial-gradient(1200px 600px at 100% 0%,#dfe9ff 0%,rgba(223,233,255,0) 70%)}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 28px 64px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--blue)}
+h1{font-size:40px;line-height:1.15;margin:6px 0 16px;font-weight:800;letter-spacing:-.02em}
+h1 span{color:var(--blue)}
+.meta{display:flex;gap:10px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;border-radius:999px;padding:4px 12px;background:#fff;border:1px solid var(--line);color:var(--muted)}
+.pill b{color:var(--ink)}
+.pill.warn{background:var(--orange-bg);border-color:#fed7aa;color:var(--orange)}
+.pill.warn i{width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 1px 2px rgba(16,40,100,.04)}
+.sec{margin-top:26px}
+.sec-h{display:flex;align-items:center;gap:12px;padding:16px 22px;background:var(--blue-bg)}
+.ic{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;box-shadow:0 1px 3px rgba(16,40,100,.08)}
+.ic svg{width:21px;height:21px;stroke:var(--blue);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sec-h h2{font-size:20px;margin:0;font-weight:700}
+.sec-h .no{font-size:12px;font-weight:700;color:var(--blue);margin-left:auto;letter-spacing:.04em}
+.body{padding:18px 22px 20px}
+.body p{margin:0 0 6px;font-size:15px;color:var(--muted)}
+.body p b{color:var(--ink)}
+.outcome{background:var(--green-bg);padding:14px 22px 16px}
+.outcome .k{font-size:12px;font-weight:700;color:var(--green-d)}
+.outcome .v{font-size:20px;font-weight:800;color:var(--green-d);margin:2px 0 2px}
+.outcome p{margin:0;font-size:14px;color:var(--muted)}
+.chip{display:inline-block;font-size:11.5px;font-weight:700;border-radius:6px;padding:2px 8px}
+.c-done{background:var(--green-bg);color:var(--green-d)}
+.c-wait{background:var(--orange-bg);color:var(--orange)}
+.c-plan{background:var(--grey-bg);color:#5b6680}
+.c-blue{background:var(--blue-bg);color:var(--blue)}
+/* support */
+.asks{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ask{border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:12px;padding:14px 16px}
+.ask .who{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.ask .who b{font-size:16px}
+.ask .t{font-size:15.5px;font-weight:600;margin:0 0 4px;color:var(--ink)}
+.ask .n{font-size:13px;color:var(--soft);margin:0}
 /* timeline */
-.tlwrap{overflow-x:auto}
-.t2{position:relative;height:178px;min-width:780px}
-.t2rail{position:absolute;top:46px;left:7%;right:7%;height:6px;border-radius:3px;background:#e8edf3}
-.t2fill{position:absolute;top:46px;left:7%;width:21%;height:6px;border-radius:3px;background:var(--green)}
-.t2n{position:absolute;top:0;transform:translateX(-50%);text-align:center;width:13.5%}
-.t2d{font-size:13.5px;font-weight:800;height:22px;white-space:nowrap;color:var(--muted)}
-.t2o{width:22px;height:22px;border-radius:50%;margin:8px auto 8px;background:#fff;border:3px solid var(--grey)}
-.t2n.done .t2d{color:var(--ink)}
-.t2n.done .t2o{border-color:var(--green);background:var(--green);box-shadow:inset 0 0 0 4px #fff}
-.t2n.next .t2o{border-color:var(--orange);box-shadow:0 0 0 6px #fdebd5}
-.t2n.next .t2d{color:#c46a12}
-.t2t{font-size:13px;font-weight:700;line-height:1.3}
-.t2s{font-size:11.5px;color:#c46a12;line-height:1.3;margin-top:2px}
-.t2today{position:absolute;left:28.5%;top:22px;height:44px;border-left:2px dashed var(--orange)}
-.t2today span{position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:#fff3e6;color:#c46a12;font-weight:700;font-size:11.5px;padding:2px 8px;border-radius:9px;white-space:nowrap}
-.t2band{position:absolute;top:140px;height:28px;border-radius:8px;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center}
-.t2band.b1{left:2%;width:50%;background:#e6edfd;color:var(--blue)}.t2band.b3{left:52.5%;width:45.5%;background:#eef1f5;color:#56637a}
-ul{margin:0;padding-left:18px}li{margin:5px 0;font-size:14.5px}
-details{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 26px}
-summary{cursor:pointer;font-weight:700;font-size:15px}
-details h3{font-size:14.5px;margin:18px 0 8px}
-.n{text-align:right;font-variant-numeric:tabular-nums}
-.src{color:var(--muted);font-size:12.5px;margin-top:14px}
-@media(max-width:700px){h1{font-size:25px}.panel,details{padding:18px}}
-/* gantt */
-.gw{overflow-x:auto}
-.g{display:grid;grid-template-columns:64px repeat(7,minmax(96px,1fr));min-width:820px;position:relative}
-.gh{font-size:12px;font-weight:700;color:var(--muted);text-align:center;padding:0 4px 10px;line-height:1.3}
-.gh b{display:block;font-size:13.5px;color:var(--ink)}
-.gh.fut b{color:var(--muted)}
-.lane{font-weight:800;font-size:14px;display:flex;align-items:center;border-top:1px solid var(--line);min-height:62px}
-.cell{border-top:1px solid var(--line);border-left:1px dashed #eaecf0;min-height:62px;position:relative}
-.bar{position:relative;z-index:1;margin:12px 4px;border-radius:9px;padding:6px 10px;font-size:12.5px;font-weight:600;line-height:1.3;display:flex;align-items:center;gap:6px}
-.g .done{background:#ecfdf3;color:#05603a;border:1px solid #abefc6}
-.g .wait{background:repeating-linear-gradient(135deg,#fffaeb 0 8px,#fef0c7 8px 16px);color:#93370d;border:1px solid #fedf89}
-.g .plan{background:#f2f4f7;color:#475467;border:1px dashed #d0d5dd}
-.ms{display:flex;align-items:center;justify-content:center;gap:6px;margin:12px 4px;font-size:12.5px;font-weight:700;color:#475467}
-.ms i{width:14px;height:14px;transform:rotate(45deg);border:2.5px solid #d0d5dd;background:#fff;border-radius:3px;flex:none}
-.today{position:absolute;top:0;bottom:0;border-left:2px dashed var(--orange);z-index:2;pointer-events:none}
-.today span{position:absolute;bottom:-24px;left:-30px;font-size:11.5px;font-weight:700;color:#b54708;background:#fffaeb;padding:1px 7px;border-radius:8px;white-space:nowrap}
-.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:14px}
-.legend i{display:inline-block;width:18px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.tl{display:grid;grid-template-columns:repeat(7,minmax(118px,1fr));min-width:860px;padding:6px 0 4px}
+.tlw{overflow-x:auto}
+.st{position:relative;padding-right:10px}
+.st .row{display:flex;align-items:center;gap:8px}
+.num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;flex:none;border:2px solid var(--grey);color:var(--soft);background:#fff;position:relative;z-index:1}
+.st.done .num{background:var(--blue);border-color:var(--blue);color:#fff}
+.st.now .num{background:#fff;border-color:var(--orange);color:var(--orange);box-shadow:0 0 0 5px #ffe6cc}
+.st .ln{flex:1;height:2px;background:var(--grey)}
+.st.done .ln{background:var(--blue)}
+.st:last-child .ln{display:none}
+.st .d{font-size:18px;font-weight:800;color:var(--blue);margin:10px 0 4px;white-space:nowrap}
+.st.plan .d{color:var(--soft)}
+.st.now .d{color:var(--orange)}
+.st .lb{font-size:14px;font-weight:600;margin-top:8px;line-height:1.35}
+.phases{display:grid;grid-template-columns:4fr 3fr;gap:30px;margin-top:18px;min-width:860px;padding-right:22px}
+.arrow{position:relative;height:40px;display:flex;align-items:center;gap:10px;padding:0 26px 0 12px;background:linear-gradient(90deg,#eef3ff,#dfe8ff);border:1.5px solid #9db7f5;border-right:0;border-radius:10px 0 0 10px;font-weight:700;font-size:14px}
+.arrow:after{content:"";position:absolute;right:-20px;top:-1.5px;border-left:20px solid #dfe8ff;border-top:20px solid transparent;border-bottom:20px solid transparent;filter:drop-shadow(1.5px 0 0 #9db7f5)}
+.arrow .tag{background:var(--blue);color:#fff;font-size:11px;letter-spacing:.06em;padding:3px 10px;border-radius:999px}
+.arrow.g2{background:linear-gradient(90deg,#f4f6fa,#e9edf4);border-color:#c9d1df}
+.arrow.g2:after{border-left-color:#e9edf4;filter:drop-shadow(1.5px 0 0 #c9d1df)}
+.arrow.g2 .tag{background:#7b879e}
+.note{margin:22px auto 0;display:table;font-size:12.5px;color:var(--muted);border:1px solid #c9d4ea;border-radius:999px;padding:5px 14px;background:#fff}
+.note b{color:var(--ink)}
+/* roadmap by partner */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
+.col{display:flex;flex-direction:column}
+.col .sec-h h2{font-size:19px}
+.col.mpt .sec-h{background:var(--blue-bg)}
+.col.fti .sec-h{background:var(--purple-bg)}.col.fti .ic svg{stroke:var(--purple)}
+.col.bu .sec-h{background:var(--green-bg)}.col.bu .ic svg{stroke:var(--green)}
+.col .body{flex:1}
+.it{padding:12px 0;border-top:1px solid var(--line)}
+.it:first-child{border-top:0;padding-top:2px}
+.it h3{font-size:16px;margin:6px 0 3px;font-weight:700}
+.it p{font-size:14px;margin:0;color:var(--muted)}
+.blk-title{font-size:13px;font-weight:700;color:var(--soft);letter-spacing:.04em;margin:0 0 4px}
+@media(max-width:860px){h1{font-size:30px}.asks,.cols{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="eyebrow">PROJECT STATUS</div>
-  <h1>Đồng bộ Voice Brandname LONGCHAU</h1>
+  <div class="eyebrow">VOICE BRANDNAME · PROJECT STATUS</div>
+  <h1>Đồng bộ Voice Brandname <span>LONGCHAU</span></h1>
   <div class="meta">
-    <span>Cập nhật: <b>27/11/2026</b></span>
-    <span><i class="dot"></i>Trạng thái: <b>Đang chờ đối tác</b></span>
-    <span>Phụ trách: <b>Team Customer Platform</b></span>
+    <span class="pill">Cập nhật: <b>27/11/2026</b></span>
+    <span class="pill warn"><i></i>Đang chờ đối tác</span>
+    <span class="pill">Phụ trách: <b>Team Customer Platform</b></span>
   </div>
 
-  <div class="panel summary">
-    <h2>Summary</h2>
-    <p><b>Mục tiêu:</b> toàn bộ cuộc gọi outbound của Long Châu qua MPT và FTI hiển thị một brandname thống nhất là LONGCHAU.</p>
-    <p><b>Tình hình:</b> MPT đã đề xuất số lượng đầu số khi tách account ECOM Vaccine và xác nhận BACSI LC247 không sử dụng. Còn chờ FTI đề xuất số lượng; sau đó BU chốt số lượng để đối tác lập hồ sơ đổi brandname.</p>
-  </div>
-
-  <div class="panel ask">
-    <h2>Support Needed</h2>
-    <table>
-      <tr><th>Bên</th><th>Nội dung</th><th>Ghi chú</th></tr>
-      <tr><td class="who">FTI</td><td>Đề xuất số lượng đầu số cho ECOM VAC và ECOM LAB, chia theo từng nhà mạng.</td><td class="muted">Team Customer Platform đã gửi đề nghị ngày 26/11.</td></tr>
-      <tr><td class="who">BU</td><td>Chốt số lượng đầu số cho ECOM VAC và ECOM LAB, và xác nhận remove BACSI LC247.</td><td class="muted">Sau khi có đề xuất của FTI. Đây là điều kiện để đối tác lập hồ sơ.</td></tr>
-    </table>
-  </div>
-
-  <div class="panel">
-    <h2>Timeline</h2>
-    <div class="tlwrap"><div class="t2">
-      <div class="t2rail"></div><div class="t2fill"></div>
-      <div class="t2today"><span>Hôm nay</span></div>
-      <div class="t2n done" style="left:7%"><div class="t2d">26/11</div><div class="t2o"></div><div class="t2t">BU chọn phương án tách account</div></div>
-      <div class="t2n done" style="left:21%"><div class="t2d">27/11</div><div class="t2o"></div><div class="t2t">MPT đề xuất số lượng</div></div>
-      <div class="t2n next" style="left:36%"><div class="t2d">Đang chờ</div><div class="t2o"></div><div class="t2t">FTI đề xuất số lượng</div><div class="t2s">Đã gửi đề nghị 26/11</div></div>
-      <div class="t2n" style="left:50%"><div class="t2d">Sắp tới</div><div class="t2o"></div><div class="t2t">BU chốt số lượng</div></div>
-      <div class="t2n" style="left:64%"><div class="t2d">Sắp tới</div><div class="t2o"></div><div class="t2t">Đối tác lập hồ sơ, BU trình ký</div></div>
-      <div class="t2n" style="left:79%"><div class="t2d">5–10 ngày LV</div><div class="t2o"></div><div class="t2t">Nhà mạng duyệt</div></div>
-      <div class="t2n" style="left:93%"><div class="t2d">Go-live</div><div class="t2o"></div><div class="t2t">Hiển thị LONGCHAU</div></div>
-      <div class="t2band b1">Chuẩn bị account</div>
-      <div class="t2band b3">Đổi brandname</div>
-    </div></div>
-  </div>
-
-  <div class="panel">
-    <h2>Roadmap theo đối tác</h2>
-    <div class="gw"><div class="g" id="g">
-      <div></div>
-      <div class="gh"><b>26/11</b>Chọn phương án</div>
-      <div class="gh"><b>27/11</b>Đề xuất số lượng</div>
-      <div class="gh"><b style="color:#b54708">Hôm nay</b>Đang chờ</div>
-      <div class="gh fut"><b>Sắp tới</b>Chốt số lượng</div>
-      <div class="gh fut"><b>Sắp tới</b>Lập hồ sơ</div>
-      <div class="gh fut"><b>5–10 ngày LV</b>Nhà mạng duyệt</div>
-      <div class="gh fut"><b>Go-live</b>Hiển thị LONGCHAU</div>
-
-      <div class="lane">MPT</div>
-      <div class="cell"></div>
-      <div class="cell"><div class="bar done">✓ Đề xuất 126 / 9 số · BACSI LC247 không sử dụng</div></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"><div class="bar plan">Lập hồ sơ</div></div>
-      <div class="cell"><div class="bar plan">Nộp nhà mạng</div></div>
-      <div class="cell"><div class="bar plan">Đổi brandname</div></div>
-
-      <div class="lane">FTI</div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"><div class="bar wait">⏳ Đề xuất số lượng · hỏi từ 26/11</div></div>
-      <div class="cell"></div>
-      <div class="cell"><div class="bar plan">Lập hồ sơ</div></div>
-      <div class="cell"><div class="bar plan">Nộp nhà mạng</div></div>
-      <div class="cell"><div class="bar plan">Đổi brandname</div></div>
-
-      <div class="lane">BU</div>
-      <div class="cell"><div class="bar done">✓ Chọn tách trên bộ số hiện có</div></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"><div class="ms"><i></i>Chốt số lượng</div></div>
-      <div class="cell"><div class="bar plan">Trình ký hồ sơ</div></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-
-      <div class="today" id="today"></div>
-    </div></div>
-    <div class="legend">
-      <span><i style="background:var(--green-bg);border:1px solid #abefc6"></i>Đã xong</span>
-      <span><i style="background:#fef0c7;border:1px solid #fedf89"></i>Đang chờ</span>
-      <span><i style="background:var(--grey-bg);border:1px dashed var(--grey)"></i>Kế hoạch</span>
-      <span>◇ Mốc quyết định</span>
+  <!-- 1. Summary -->
+  <div class="card sec">
+    <div class="sec-h"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/></svg></span><h2>Summary</h2><span class="no">01</span></div>
+    <div class="body">
+      <p><b>Tình hình:</b> MPT đã đề xuất số lượng đầu số khi tách account ECOM Vaccine và xác nhận BACSI LC247 không sử dụng. Còn chờ FTI đề xuất số lượng; sau đó BU chốt số lượng để đối tác lập hồ sơ đổi brandname.</p>
+    </div>
+    <div class="outcome">
+      <div class="k">Mục tiêu</div>
+      <div class="v">Một brandname LONGCHAU</div>
+      <p>Toàn bộ cuộc gọi outbound của Long Châu qua MPT và FTI hiển thị một brandname thống nhất là LONGCHAU.</p>
     </div>
   </div>
 
+  <!-- 2. Support Needed -->
+  <div class="card sec">
+    <div class="sec-h" style="background:var(--orange-bg)"><span class="ic"><svg viewBox="0 0 24 24" style="stroke:var(--orange)"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg></span><h2>Support Needed</h2><span class="no" style="color:var(--orange)">02</span></div>
+    <div class="body">
+      <div class="asks">
+        <div class="ask">
+          <div class="who"><b>FTI</b><span class="chip c-wait">Đang chờ</span></div>
+          <p class="t">Đề xuất số lượng đầu số cho ECOM VAC và ECOM LAB, chia theo từng nhà mạng.</p>
+          <p class="n">Team Customer Platform đã gửi đề nghị ngày 26/11.</p>
+        </div>
+        <div class="ask">
+          <div class="who"><b>BU</b><span class="chip c-plan">Sau khi có đề xuất FTI</span></div>
+          <p class="t">Chốt số lượng đầu số cho ECOM VAC và ECOM LAB, và xác nhận remove BACSI LC247.</p>
+          <p class="n">Đây là điều kiện để đối tác lập hồ sơ đổi brandname.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Timeline -->
+  <div class="card sec">
+    <div class="sec-h"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span><h2>Timeline</h2><span class="no">03</span></div>
+    <div class="body">
+      <div class="tlw">
+        <div class="tl">
+          <div class="st done"><div class="row"><span class="num">1</span><span class="ln"></span></div><div class="d">26/11</div><span class="chip c-done">Done</span><div class="lb">BU chọn phương án tách account</div></div>
+          <div class="st done"><div class="row"><span class="num">2</span><span class="ln"></span></div><div class="d">27/11</div><span class="chip c-done">Done</span><div class="lb">MPT đề xuất số lượng</div></div>
+          <div class="st now"><div class="row"><span class="num">3</span><span class="ln"></span></div><div class="d">Hôm nay</div><span class="chip c-wait">Đang chờ</span><div class="lb">FTI đề xuất số lượng</div></div>
+          <div class="st plan"><div class="row"><span class="num">4</span><span class="ln"></span></div><div class="d">Sắp tới</div><span class="chip c-plan">Planned</span><div class="lb">BU chốt số lượng</div></div>
+          <div class="st plan"><div class="row"><span class="num">5</span><span class="ln"></span></div><div class="d">Sắp tới</div><span class="chip c-plan">Planned</span><div class="lb">Đối tác lập hồ sơ, BU trình ký</div></div>
+          <div class="st plan"><div class="row"><span class="num">6</span><span class="ln"></span></div><div class="d">5–10 ngày LV</div><span class="chip c-plan">Planned</span><div class="lb">Nhà mạng duyệt</div></div>
+          <div class="st plan"><div class="row"><span class="num">7</span><span class="ln"></span></div><div class="d">Go-live</div><span class="chip c-plan">Planned</span><div class="lb">Hiển thị LONGCHAU</div></div>
+        </div>
+        <div class="phases">
+          <div class="arrow"><span class="tag">GIAI ĐOẠN 1</span>Chuẩn bị account</div>
+          <div class="arrow g2"><span class="tag">GIAI ĐOẠN 2</span>Đổi brandname</div>
+        </div>
+      </div>
+      <div class="note">⏱ <b>Nhà mạng duyệt:</b> Vinaphone khoảng 5 ngày LV · Viettel, Mobifone khoảng 7–10 ngày LV</div>
+    </div>
+  </div>
+
+  <!-- 4. Roadmap theo đối tác -->
+  <div class="sec">
+    <div class="eyebrow" style="margin-left:2px">04 · ROADMAP THEO ĐỐI TÁC</div>
+    <div class="cols">
+      <div class="card col mpt">
+        <div class="sec-h"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><h2>MPT</h2></div>
+        <div class="body">
+          <div class="it"><span class="chip c-done">Done · 27/11</span><h3>Đề xuất số lượng đầu số</h3><p>ECOM VAC 126 số, ECOM LAB 9 số.</p></div>
+          <div class="it"><span class="chip c-done">Done · 27/11</span><h3>Kiểm tra BACSI LC247</h3><p>Không sử dụng, sẽ remove.</p></div>
+          <div class="it"><span class="chip c-plan">Planned</span><h3>Lập hồ sơ, nộp nhà mạng</h3><p>Sau khi BU chốt số lượng.</p></div>
+        </div>
+        <div class="outcome"><div class="k">Expected outcome</div><div class="v">3 brandname → LONGCHAU</div><p>LONGCHAU247, NTLONGCHAU, TCLONGCHAU</p></div>
+      </div>
+      <div class="card col fti">
+        <div class="sec-h"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><h2>FTI</h2></div>
+        <div class="body">
+          <div class="it"><span class="chip c-wait">Đang chờ · hỏi từ 26/11</span><h3>Đề xuất số lượng đầu số</h3><p>ECOM VAC và ECOM LAB, chia theo từng nhà mạng.</p></div>
+          <div class="it"><span class="chip c-plan">Planned</span><h3>Lập hồ sơ, nộp nhà mạng</h3><p>Sau khi BU chốt số lượng.</p></div>
+        </div>
+        <div class="outcome"><div class="k">Expected outcome</div><div class="v">3 brandname → LONGCHAU</div><p>LongChau247, NT LONGCHAU, TC LONGCHAU</p></div>
+      </div>
+      <div class="card col bu">
+        <div class="sec-h"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg></span><h2>BU</h2></div>
+        <div class="body">
+          <div class="it"><span class="chip c-done">Done · 26/11</span><h3>Chọn phương án</h3><p>Tách trên bộ đầu số hiện có.</p></div>
+          <div class="it"><span class="chip c-blue">Mốc quyết định</span><h3>Chốt số lượng đầu số</h3><p>ECOM VAC, ECOM LAB; xác nhận remove BACSI LC247.</p></div>
+          <div class="it"><span class="chip c-plan">Planned</span><h3>Trình ký hồ sơ</h3><p>Nhận hồ sơ từ MPT, FTI và trình ký.</p></div>
+        </div>
+        <div class="outcome"><div class="k">Expected outcome</div><div class="v">Kích hoạt hồ sơ</div><p>Đối tác nộp nhà mạng và đổi brandname.</p></div>
+      </div>
+    </div>
+  </div>
 </div>
-<script>
-(function(){const g=document.getElementById('g'),t=document.getElementById('today');
-function place(){const hs=g.querySelectorAll('.gh');const a=hs[1].getBoundingClientRect(),b=hs[2].getBoundingClientRect(),gr=g.getBoundingClientRect();t.style.left=(a.right-gr.left)+'px';}
-place();addEventListener('resize',place);})();
-</script>
 </body>
 </html>
