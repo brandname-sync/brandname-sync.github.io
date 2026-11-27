@@ -68,6 +68,24 @@ h1{font-size:34px;margin:4px 0 6px;letter-spacing:-.01em}
 .tl{min-width:580px}
 @media(max-width:800px){.nd .t{font-size:13px}.nd .dt{font-size:14px}.nd .k{font-size:10.5px}}
 @media(max-width:1000px){.grid4,.steps{grid-template-columns:1fr}}
+.t2{position:relative;height:196px;min-width:820px}
+.t2rail{position:absolute;top:46px;left:7%;right:7%;height:6px;border-radius:3px;background:#e8edf3}
+.t2fill{position:absolute;top:46px;left:7%;height:6px;border-radius:3px;background:var(--green)}
+.t2n{position:absolute;top:0;transform:translateX(-50%);text-align:center;width:13.5%}
+.t2d{font-size:13.5px;font-weight:800;height:22px;white-space:nowrap}
+.t2o{width:22px;height:22px;border-radius:50%;margin:8px auto 8px;background:#fff;border:3px solid var(--grey)}
+.t2n.done .t2o{border-color:var(--green);background:var(--green);box-shadow:inset 0 0 0 4px #fff}
+.t2n.next .t2o{border-color:var(--purple);box-shadow:0 0 0 6px #ece4fb}
+.t2n.next .t2d{color:var(--purple)}
+.t2n.trg .t2o{border-radius:5px;transform:rotate(45deg);width:20px;height:20px;border-color:var(--orange);background:#fff7ed}
+.t2n.trg .t2d{color:#c46a12}
+.t2n.plan .t2d{color:var(--muted)}
+.t2t{font-size:13px;font-weight:700;line-height:1.3}
+.t2s{font-size:11.5px;color:var(--muted);line-height:1.3;margin-top:2px}
+.t2today{position:absolute;top:22px;height:44px;width:2px;border-left:2px dashed var(--orange)}
+.t2today span{position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:#fff3e6;color:#c46a12;font-weight:700;font-size:11.5px;padding:2px 8px;border-radius:9px;white-space:nowrap}
+.t2band{position:absolute;top:158px;height:30px;border-radius:8px;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.t2band.b1{background:#e6edfd;color:var(--blue)}.t2band.b3{background:#eef1f5;color:#56637a}
 </style>
 </head>
 <body>
@@ -82,13 +100,18 @@ h1{font-size:34px;margin:4px 0 6px;letter-spacing:-.01em}
   </div>
 
   <div class="panel mt tlwrap">
-    <div class="tl">
-      <div class="rail"></div><div class="fill" style="top:50px;width:6%"></div>
-      <div class="todayl"></div><div class="today">Hôm nay 27/11</div>
-      <div class="nd cur" style="left:12.5%"><div class="dt">17/11 → nay</div><div class="o"></div><div class="t">Account Split</div><div class="k">STEP 1</div></div>
-      <div class="nd done" style="left:37.5%"><div class="dt">27/11</div><div class="o"></div><div class="t">BACSI LC247 Review</div><div class="k">STEP 2</div></div>
-      <div class="nd trg" style="left:62.5%"><div class="dt">Chưa có ngày</div><div class="o"></div><div class="t">Number Quantity Confirmation</div><div class="k">TRIGGER</div></div>
-      <div class="nd" style="left:87.5%"><div class="dt">Sau Trigger</div><div class="o"></div><div class="t">Brandname Synchronization</div><div class="k">STEP 3 · nhà mạng 5–10 ngày làm việc</div></div>
+    <div class="t2">
+      <div class="t2rail"></div><div class="t2fill" style="width:21%"></div>
+      <div class="t2today" style="left:28.5%"><span>Hôm nay</span></div>
+      <div class="t2n done" style="left:7%"><div class="t2d">26/11</div><div class="t2o"></div><div class="t2t">BU chọn Phương án 1</div></div>
+      <div class="t2n done" style="left:21%"><div class="t2d">27/11</div><div class="t2o"></div><div class="t2t">MPT đề xuất 126 / 9</div><div class="t2s">BACSI LC247 không sử dụng</div></div>
+      <div class="t2n next" style="left:36%"><div class="t2d">Đang chờ</div><div class="t2o"></div><div class="t2t">FTI đề xuất số lượng</div><div class="t2s">Đã hỏi 26/11</div></div>
+      <div class="t2n trg" style="left:50%"><div class="t2d">Chờ</div><div class="t2o"></div><div class="t2t">BU chốt số lượng</div><div class="t2s">Trigger lập hồ sơ</div></div>
+      <div class="t2n plan" style="left:64%"><div class="t2d">Chờ</div><div class="t2o"></div><div class="t2t">Đối tác lập hồ sơ</div><div class="t2s">BU trình ký</div></div>
+      <div class="t2n plan" style="left:79%"><div class="t2d">+5–10 ngày LV</div><div class="t2o"></div><div class="t2t">Nhà mạng thẩm định</div><div class="t2s">Vina ~5, Viettel/Mobi ~7–10</div></div>
+      <div class="t2n plan" style="left:93%"><div class="t2d">Go-live</div><div class="t2o"></div><div class="t2t">Đổi sang LONGCHAU</div><div class="t2s">Trên đầu số hiện tại</div></div>
+      <div class="t2band b1" style="left:2%;width:50%">Step 1 Account Split · Step 2 BACSI LC247</div>
+      <div class="t2band b3" style="left:52.5%;width:45.5%">Step 3 Brandname Synchronization</div>
     </div>
   </div>
 
