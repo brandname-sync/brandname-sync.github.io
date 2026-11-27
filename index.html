@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Roadmap – Đồng bộ Voice Brandname LONGCHAU</title>
+<style>
+:root{--bg:#f3f6fa;--card:#fff;--ink:#0f1f3d;--muted:#6b7a90;--line:#e3e8ef;--green:#22a559;--blue:#2457e6;--grey:#9aa6b8;--orange:#e98a2b;--purple:#7a4fd6}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Inter,system-ui,-apple-system,sans-serif;line-height:1.5}
+.wrap{max-width:1200px;margin:0 auto;padding:32px 28px 60px}
+.eyebrow{color:var(--blue);letter-spacing:.12em;font-size:13px;font-weight:600}
+h1{font-size:34px;margin:4px 0 6px;letter-spacing:-.01em}
+.obj{color:var(--muted);font-size:16px;margin:0;max-width:900px}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.meta span{background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:13.5px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 28px}
+.mt{margin-top:22px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+/* timeline */
+.tl{position:relative;height:128px;margin-top:14px}
+.tl .rail{position:absolute;top:50px;left:12.5%;right:12.5%;height:6px;border-radius:3px;background:#e8edf3}
+.tl .fill{position:absolute;top:62px;left:12.5%;width:12.5%;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--green),var(--blue))}
+.nd{position:absolute;top:10px;transform:translateX(-50%);text-align:center;width:24%}
+.nd .dt{font-size:16px;font-weight:800;height:24px;white-space:nowrap}
+.nd .k{font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--muted);margin-top:2px}
+.nd .o{width:30px;height:30px;border-radius:50%;margin:2px auto 8px;background:#fff;border:3px solid var(--grey)}
+.nd.done .o{border-color:var(--green);background:var(--green);box-shadow:inset 0 0 0 5px #fff}
+.nd.cur .o{border-color:var(--blue);background:var(--blue);box-shadow:0 0 0 7px #dfe7fd,inset 0 0 0 5px #fff}
+.nd.trg .o{border-radius:6px;transform:rotate(45deg);width:26px;height:26px;border-color:var(--orange);background:#fff7ed}
+.nd .t{font-size:14.5px;font-weight:700}
+.todayl{position:absolute;left:18.5%;top:2px;height:62px;width:3px;background:var(--orange);transform:translateX(-50%)}
+.today{position:absolute;top:-20px;left:18.5%;transform:translateX(-50%);background:#fff3e6;color:#c46a12;font-weight:700;font-size:12px;padding:2px 9px;border-radius:9px;white-space:nowrap}
+/* cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;border-top:6px solid var(--grey);display:flex;flex-direction:column}
+.card.cur{border-top-color:var(--blue)}.card.done{border-top-color:var(--green)}.card.trg{border-top-color:var(--orange)}
+.card .hd{padding:16px 18px 12px;border-bottom:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.no{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--muted)}
+.card h3{font-size:17px;margin:6px 0 0;line-height:1.3}
+.card .bd{padding:14px 18px 16px;font-size:14px;flex:1}
+.lbl{font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--muted);margin:0 0 6px}
+.card ul{margin:0 0 12px;padding-left:18px}.card li{margin:3px 0}
+.vs{border-top:1px dashed var(--line);padding-top:10px;margin-top:4px}
+.v{display:grid;grid-template-columns:62px 1fr;gap:8px;align-items:start;margin:7px 0}
+.v b{font-size:13px;padding-top:1px}
+.v p{margin:3px 0 0;font-size:13px;color:#3b4960}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:10px;white-space:nowrap}
+.p-done{background:#e5f6ec;color:#1b8a49}.p-cur{background:#e6edfd;color:var(--blue)}.p-wait{background:#f0e9fc;color:var(--purple)}.p-bu{background:#fff3e6;color:#c46a12}.p-ns{background:#eef1f5;color:#56637a}.p-na{background:#f6f7f9;color:#9aa3b2}
+.flow{list-style:none;padding:0;margin:0 0 12px}
+.flow li{position:relative;padding:0 0 10px 20px;margin:0}
+.flow li:before{content:"";position:absolute;left:4px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--grey)}
+.flow li:after{content:"";position:absolute;left:7px;top:18px;bottom:0;width:2px;background:var(--line)}
+.flow li:last-child:after{display:none}
+.flow small{display:block;color:var(--muted);font-size:12.5px}
+/* blocker */
+.blk{border-left:6px solid var(--orange)}
+.blk h2{font-size:19px;margin:0 0 6px}
+.blk .sub{color:var(--muted);font-size:14px;margin:0 0 16px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}
+.st{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fbfcfe;font-size:14px;position:relative}
+.st.now{border-color:#f3c48f;background:#fff7ed}
+.st .n{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:700;align-items:center;justify-content:center;margin-bottom:6px}
+.st.now .n{background:var(--orange)}
+.st .o{font-size:12.5px;color:var(--muted);margin-top:4px}
+.src{color:var(--muted);font-size:12.5px;margin-top:14px}
+.tlwrap{overflow-x:auto}
+.tl{min-width:580px}
+@media(max-width:800px){.nd .t{font-size:13px}.nd .dt{font-size:14px}.nd .k{font-size:10.5px}}
+@media(max-width:1000px){.grid4,.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">PROJECT ROADMAP</div>
+  <h1>Đồng bộ Voice Brandname LONGCHAU</h1>
+  <p class="obj">Objective: toàn bộ cuộc gọi outbound của Long Châu hiển thị thống nhất brandname LONGCHAU trên hai nhà cung cấp MPT và FTI.</p>
+  <div class="meta">
+    <span>Cập nhật: <b>27/11/2026</b></span>
+    <span>Current Step: <b>Step 1 – Account Split</b></span>
+    <span>Blocker: <b>Chờ FTI tư vấn số lượng đầu số</b></span>
+  </div>
+
+  <div class="panel mt tlwrap">
+    <div class="tl">
+      <div class="rail"></div><div class="fill" style="top:50px;width:6%"></div>
+      <div class="todayl"></div><div class="today">Hôm nay 27/11</div>
+      <div class="nd cur" style="left:12.5%"><div class="dt">17/11 → nay</div><div class="o"></div><div class="t">Account Split</div><div class="k">STEP 1</div></div>
+      <div class="nd done" style="left:37.5%"><div class="dt">27/11</div><div class="o"></div><div class="t">BACSI LC247 Review</div><div class="k">STEP 2</div></div>
+      <div class="nd trg" style="left:62.5%"><div class="dt">Chưa có ngày</div><div class="o"></div><div class="t">Number Quantity Confirmation</div><div class="k">TRIGGER</div></div>
+      <div class="nd" style="left:87.5%"><div class="dt">Sau Trigger</div><div class="o"></div><div class="t">Brandname Synchronization</div><div class="k">STEP 3 · nhà mạng 5–10 ngày làm việc</div></div>
+    </div>
+  </div>
+
+  <div class="grid4 mt">
+    <div class="card cur">
+      <div class="hd"><div class="row"><span class="no">STEP 1</span><span class="pill p-cur">In Progress</span></div>
+        <h3>Account Split – Tách ECOM VAC thành ECOM VAC và ECOM LAB</h3></div>
+      <div class="bd">
+        <p class="lbl">SCOPE</p>
+        <ul>
+          <li>Bổ sung số đại diện pool cho account mới</li>
+          <li>Xác định số lượng đầu số theo từng nhà mạng</li>
+          <li>Đối tác phân bổ đầu số cho từng account</li>
+          <li>Đối soát hằng tháng riêng cho ECOM VAC và ECOM LAB, gồm định phí và biến phí</li>
+        </ul>
+        <p class="lbl">PHƯƠNG ÁN</p>
+        <p style="margin:0 0 10px">Phương án 1 – tách trên bộ đầu số hiện có (BU lựa chọn).</p>
+        <div class="vs">
+          <div class="v"><b>MPT</b><div><span class="pill p-done">Completed</span><p>Đề xuất 27/11: ECOM VAC 126 số (Viettel 87, Mobifone 23, Vinaphone 12, cố định 4); ECOM LAB 9 số (Viettel 3, Mobifone 2, Vinaphone 2, cố định 2).</p></div></div>
+          <div class="v"><b>FTI</b><div><span class="pill p-wait">Pending – FTI</span><p>Đã đề nghị tư vấn ngày 26/11, chưa có phản hồi.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card done">
+      <div class="hd"><div class="row"><span class="no">STEP 2</span><span class="pill p-done">Review Completed</span></div>
+        <h3>BACSI LC247 Review – Kiểm tra và xử lý account BACSI LC247</h3></div>
+      <div class="bd">
+        <p class="lbl">SCOPE</p>
+        <ul>
+          <li>Kiểm tra với MPT đầu số có đang đấu nối hoặc sử dụng không</li>
+          <li>Không sử dụng thì remove account</li>
+        </ul>
+        <div class="vs">
+          <div class="v"><b>MPT</b><div><span class="pill p-done">Completed</span><p>Xác nhận 27/11: chưa tạo cụm outbound, chưa phát sinh cước. Hướng xử lý: remove.</p></div></div>
+          <div class="v"><b>FTI</b><div><span class="pill p-na">Not Applicable</span><p>FTI không có brandname BACSI LC247.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card trg">
+      <div class="hd"><div class="row"><span class="no">TRIGGER</span><span class="pill p-bu">Pending</span></div>
+        <h3>Number Quantity Confirmation – BU chốt số lượng đầu số</h3></div>
+      <div class="bd">
+        <p class="lbl">ĐIỀU KIỆN KÍCH HOẠT HỒ SƠ</p>
+        <p style="margin:0 0 12px">BU chốt số lượng đầu số của từng account, chi tiết theo từng nhà mạng. Đây là điều kiện để đối tác lập hồ sơ đăng ký brandname.</p>
+        <div class="vs">
+          <div class="v"><b>Đã chốt</b><div><span class="pill p-done">Completed</span><p>Các account còn lại.</p></div></div>
+          <div class="v"><b>Còn lại</b><div><span class="pill p-bu">Pending</span><p>ECOM VAC / ECOM LAB (chờ đề xuất của FTI) và BACSI LC247 (MPT đã xác nhận không sử dụng).</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="hd"><div class="row"><span class="no">STEP 3</span><span class="pill p-ns">Not Started</span></div>
+        <h3>Brandname Synchronization – Đồng bộ brandname LONGCHAU</h3></div>
+      <div class="bd">
+        <p class="lbl">QUY TRÌNH</p>
+        <ul class="flow">
+          <li>Đối tác lập hồ sơ đăng ký</li>
+          <li>BU nhận hồ sơ và trình ký</li>
+          <li>Nhà mạng thẩm định<small>Vinaphone khoảng 5 ngày làm việc; Viettel, Mobifone khoảng 7–10 ngày làm việc</small></li>
+          <li>Đổi brandname trên đầu số hiện tại</li>
+        </ul>
+        <div class="vs">
+          <div class="v"><b>MPT</b><div><p style="margin-top:0">LONGCHAU247, NTLONGCHAU, TCLONGCHAU → LONGCHAU</p></div></div>
+          <div class="v"><b>FTI</b><div><p style="margin-top:0">LongChau247, NT LONGCHAU, TC LONGCHAU → LONGCHAU</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel mt blk">
+    <h2>Next Actions</h2>
+    <p class="sub">Toàn bộ Step 3 phụ thuộc vào việc hoàn tất số lượng đầu số của ECOM VAC / ECOM LAB.</p>
+    <div class="steps">
+      <div class="st now"><span class="n">1</span><div><b>FTI</b> tư vấn số lượng đầu số ECOM VAC / ECOM LAB theo từng nhà mạng.</div><div class="o">Đề nghị đã gửi ngày 26/11.</div></div>
+      <div class="st"><span class="n">2</span><div><b>Team Customer Platform</b> trình BU đề xuất của MPT và FTI, cùng kết quả kiểm tra BACSI LC247.</div><div class="o">Đề xuất của MPT đã có từ 27/11.</div></div>
+      <div class="st"><span class="n">3</span><div><b>BU</b> chốt số lượng đầu số; đối tác bắt đầu lập hồ sơ đăng ký brandname LONGCHAU.</div><div class="o">Kích hoạt Step 3.</div></div>
+    </div>
+    <div class="src">Nguồn: Master Plan (Excel "Chuyển đổi Brandname Long Châu"), loop mail MPT 18/11 và 27/11, mail FTI 26/11, phản hồi của BU 27/11.</div>
+  </div>
+</div>
+</body>
+</html>
