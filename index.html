@@ -4,10 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project Status – Đồng bộ Voice Brandname LONGCHAU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f3f6fa;--card:#fff;--ink:#0f1f3d;--muted:#6b7a90;--line:#e3e8ef;--green:#22a559;--blue:#2457e6;--grey:#9aa6b8;--orange:#e98a2b;--amber:#f2b01e}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Inter,system-ui,-apple-system,sans-serif;line-height:1.55}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",Inter,system-ui,-apple-system,sans-serif;line-height:1.55}
 .wrap{max-width:1080px;margin:0 auto;padding:32px 24px 60px}
 .eyebrow{color:var(--blue);letter-spacing:.12em;font-size:13px;font-weight:600}
 h1{font-size:32px;margin:4px 0 10px;letter-spacing:-.01em}
@@ -51,6 +52,24 @@ details h3{font-size:14.5px;margin:18px 0 8px}
 .n{text-align:right;font-variant-numeric:tabular-nums}
 .src{color:var(--muted);font-size:12.5px;margin-top:14px}
 @media(max-width:700px){h1{font-size:25px}.panel,details{padding:18px}}
+/* gantt */
+.gw{overflow-x:auto}
+.g{display:grid;grid-template-columns:64px repeat(7,minmax(96px,1fr));min-width:820px;position:relative}
+.gh{font-size:12px;font-weight:700;color:var(--muted);text-align:center;padding:0 4px 10px;line-height:1.3}
+.gh b{display:block;font-size:13.5px;color:var(--ink)}
+.gh.fut b{color:var(--muted)}
+.lane{font-weight:800;font-size:14px;display:flex;align-items:center;border-top:1px solid var(--line);min-height:62px}
+.cell{border-top:1px solid var(--line);border-left:1px dashed #eaecf0;min-height:62px;position:relative}
+.bar{position:relative;z-index:1;margin:12px 4px;border-radius:9px;padding:6px 10px;font-size:12.5px;font-weight:600;line-height:1.3;display:flex;align-items:center;gap:6px}
+.g .done{background:#ecfdf3;color:#05603a;border:1px solid #abefc6}
+.g .wait{background:repeating-linear-gradient(135deg,#fffaeb 0 8px,#fef0c7 8px 16px);color:#93370d;border:1px solid #fedf89}
+.g .plan{background:#f2f4f7;color:#475467;border:1px dashed #d0d5dd}
+.ms{display:flex;align-items:center;justify-content:center;gap:6px;margin:12px 4px;font-size:12.5px;font-weight:700;color:#475467}
+.ms i{width:14px;height:14px;transform:rotate(45deg);border:2.5px solid #d0d5dd;background:#fff;border-radius:3px;flex:none}
+.today{position:absolute;top:0;bottom:0;border-left:2px dashed var(--orange);z-index:2;pointer-events:none}
+.today span{position:absolute;bottom:-24px;left:-30px;font-size:11.5px;font-weight:700;color:#b54708;background:#fffaeb;padding:1px 7px;border-radius:8px;white-space:nowrap}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:14px}
+.legend i{display:inline-block;width:18px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 </style>
 </head>
 <body>
@@ -96,48 +115,59 @@ details h3{font-size:14.5px;margin:18px 0 8px}
   </div>
 
   <div class="panel">
-    <h2>Progress</h2>
-    <table>
-      <tr><th>Hạng mục</th><th>MPT</th><th>FTI</th></tr>
-      <tr><td><b>Tách account ECOM Vaccine</b> thành ECOM VAC và ECOM LAB để tách chi phí</td>
-        <td><span class="st s-done">Đã đề xuất</span><br>ECOM VAC 126 số, ECOM LAB 9 số</td>
-        <td><span class="st s-wait">Chờ đề xuất</span></td></tr>
-      <tr><td><b>Xử lý BACSI LC247</b></td>
-        <td><span class="st s-done">Đã kiểm tra</span><br>Không sử dụng, sẽ remove</td>
-        <td><span class="st s-na">Không áp dụng</span></td></tr>
-      <tr><td><b>Đổi brandname sang LONGCHAU</b></td>
-        <td><span class="st s-ns">Chưa bắt đầu</span><br>LONGCHAU247, NTLONGCHAU, TCLONGCHAU</td>
-        <td><span class="st s-ns">Chưa bắt đầu</span><br>LongChau247, NT LONGCHAU, TC LONGCHAU</td></tr>
-    </table>
+    <h2>Roadmap theo đối tác</h2>
+    <div class="gw"><div class="g" id="g">
+      <div></div>
+      <div class="gh"><b>26/11</b>Chọn phương án</div>
+      <div class="gh"><b>27/11</b>Đề xuất số lượng</div>
+      <div class="gh"><b style="color:#b54708">Hôm nay</b>Đang chờ</div>
+      <div class="gh fut"><b>Sắp tới</b>Chốt số lượng</div>
+      <div class="gh fut"><b>Sắp tới</b>Lập hồ sơ</div>
+      <div class="gh fut"><b>5–10 ngày LV</b>Nhà mạng duyệt</div>
+      <div class="gh fut"><b>Go-live</b>Hiển thị LONGCHAU</div>
+
+      <div class="lane">MPT</div>
+      <div class="cell"></div>
+      <div class="cell"><div class="bar done">✓ Đề xuất 126 / 9 số · BACSI LC247 không sử dụng</div></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"><div class="bar plan">Lập hồ sơ</div></div>
+      <div class="cell"><div class="bar plan">Nộp nhà mạng</div></div>
+      <div class="cell"><div class="bar plan">Đổi brandname</div></div>
+
+      <div class="lane">FTI</div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"><div class="bar wait">⏳ Đề xuất số lượng · hỏi từ 26/11</div></div>
+      <div class="cell"></div>
+      <div class="cell"><div class="bar plan">Lập hồ sơ</div></div>
+      <div class="cell"><div class="bar plan">Nộp nhà mạng</div></div>
+      <div class="cell"><div class="bar plan">Đổi brandname</div></div>
+
+      <div class="lane">BU</div>
+      <div class="cell"><div class="bar done">✓ Chọn tách trên bộ số hiện có</div></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"><div class="ms"><i></i>Chốt số lượng</div></div>
+      <div class="cell"><div class="bar plan">Trình ký hồ sơ</div></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+
+      <div class="today" id="today"></div>
+    </div></div>
+    <div class="legend">
+      <span><i style="background:var(--green-bg);border:1px solid #abefc6"></i>Đã xong</span>
+      <span><i style="background:#fef0c7;border:1px solid #fedf89"></i>Đang chờ</span>
+      <span><i style="background:var(--grey-bg);border:1px dashed var(--grey)"></i>Kế hoạch</span>
+      <span>◇ Mốc quyết định</span>
+    </div>
   </div>
 
-  <div class="panel">
-    <h2>Open Issues</h2>
-    <ul>
-      <li>Số lượng đầu số BACSI LC247 chưa thống nhất giữa các nguồn (15, 25 hoặc 30 số). Cần MPT xác nhận danh sách trước khi remove.</li>
-      <li>FTI: số đầu số hiện có của ECOM VACCINE chưa khớp giữa danh sách (24 số) và phản hồi của FTI (26 số).</li>
-      <li>Thời điểm bắt đầu đối soát riêng cho ECOM VAC và ECOM LAB chưa được xác nhận với đối tác.</li>
-    </ul>
-  </div>
-
-  <details>
-    <summary>Xem chi tiết</summary>
-    <h3>Đề xuất phân bổ đầu số của MPT (27/11)</h3>
-    <table>
-      <tr><th>Account</th><th class="n">Viettel</th><th class="n">Mobifone</th><th class="n">Vinaphone</th><th class="n">Cố định</th><th class="n">Tổng</th></tr>
-      <tr><td>ECOM VAC</td><td class="n">87</td><td class="n">23</td><td class="n">12</td><td class="n">4</td><td class="n">126</td></tr>
-      <tr><td>ECOM LAB</td><td class="n">3</td><td class="n">2</td><td class="n">2</td><td class="n">2</td><td class="n">9</td></tr>
-      <tr><td><b>Tổng</b></td><td class="n"><b>90</b></td><td class="n"><b>25</b></td><td class="n"><b>14</b></td><td class="n"><b>6</b></td><td class="n"><b>135</b></td></tr>
-    </table>
-    <p class="muted" style="margin:8px 0 0">Căn cứ: ECOM LAB chiếm khoảng 1,4% sản lượng outbound (T08–T10/2026) nên cần ít đầu số hơn.</p>
-    <h3>Phạm vi từng hạng mục</h3>
-    <ul>
-      <li><b>Tách account ECOM Vaccine:</b> bổ sung số đại diện cho account mới; xác định số lượng đầu số theo nhà mạng; đối tác phân bổ đầu số; đối soát hằng tháng riêng cho từng account, gồm định phí và biến phí. BU đã chọn tách trên bộ đầu số hiện có.</li>
-      <li><b>BACSI LC247:</b> kiểm tra với MPT; không sử dụng thì remove.</li>
-      <li><b>Đổi brandname:</b> đối tác lập hồ sơ, BU nhận và trình ký, nhà mạng duyệt (Vinaphone khoảng 5 ngày làm việc; Viettel, Mobifone khoảng 7–10 ngày làm việc), sau đó đổi brandname trên đầu số hiện tại.</li>
-    </ul>
-    <div class="src">Nguồn: Master Plan dự án, mail MPT 18/11 và 27/11, mail gửi FTI 26/11, phản hồi của BU 27/11.</div>
-  </details>
 </div>
+<script>
+(function(){const g=document.getElementById('g'),t=document.getElementById('today');
+function place(){const hs=g.querySelectorAll('.gh');const a=hs[1].getBoundingClientRect(),b=hs[2].getBoundingClientRect(),gr=g.getBoundingClientRect();t.style.left=(a.right-gr.left)+'px';}
+place();addEventListener('resize',place);})();
+</script>
 </body>
 </html>
